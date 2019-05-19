@@ -21,15 +21,11 @@ class HomeUi extends State<LoginScreen> with SingleTickerProviderStateMixin
   void initState() {
     // TODO: implement initState
     super.initState();
-    _animationController=new AnimationController(
-      vsync: this,
-    duration: new Duration(microseconds: 10000),
-    );
-    _iconanimation=new CurvedAnimation(parent: _animationController, curve: Curves.easeOut);
-    _iconanimation.addListener((){setState(() {
-
-    });});
-    _animationController.forward();
+     _animationController=new AnimationController(vsync: this,
+     duration: new Duration(seconds: 10));
+     _iconanimation=new CurvedAnimation(parent: _animationController, curve: Curves.bounceInOut);
+     _iconanimation.addListener(() => this.setState((){}));
+     _animationController.forward();
   }
   
   //validation
@@ -66,7 +62,7 @@ class HomeUi extends State<LoginScreen> with SingleTickerProviderStateMixin
 
           new Container(
             child: new Column(
-              mainAxisAlignment: MainAxisAlignment.centera,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
 
                 new FlutterLogo(
